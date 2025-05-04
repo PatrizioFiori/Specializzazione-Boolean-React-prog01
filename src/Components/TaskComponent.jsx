@@ -7,9 +7,17 @@ const TaskComponent = () => {
 
 
     return (
-        <div>{res.map(item => (
-            <p>{item.title}</p>
-        ))}</div>
+        <div>
+            <ul>
+                {res.map(item => (
+                    <li key={item.it}>
+                        <p>{item.title}</p>
+                    </li>
+
+
+                ))}
+            </ul>
+        </div>
     )
 }
 
