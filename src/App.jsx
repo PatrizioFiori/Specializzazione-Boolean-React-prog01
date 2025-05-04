@@ -5,7 +5,6 @@ import Homepage from "./pages/HomePage"
 import TaskList from "./pages/TaskList"
 import AddTask from "./pages/AddTask"
 import Navbar from "./Components/navbar"
-import TaskComponent from "./Components/TaskComponent"
 
 
 
@@ -18,7 +17,6 @@ export default function App() {
 
     <BrowserRouter>
       <Navbar />
-      <TaskComponent />
       <Routes>
         <Route path="/" Component={Homepage} />
         <Route path="/TaskList" Component={TaskList} />
