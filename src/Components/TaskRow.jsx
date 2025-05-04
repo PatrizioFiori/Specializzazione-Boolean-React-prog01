@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { TaskContext } from '../Context/GlobalContext';
 
-const TaskRow = () => {
+const TaskRow = React.memo(() => {
     const { res } = useContext(TaskContext);
     console.log("ArrayRes", res);
 
@@ -23,6 +23,6 @@ const TaskRow = () => {
             ))}
         </>
     );
-}
+});
 
 export default TaskRow;

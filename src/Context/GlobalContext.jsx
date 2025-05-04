@@ -28,24 +28,3 @@ export const TaskProvider = ({ children }) => {
         </TaskContext.Provider>
     )
 }
-
-
-
-
-/*
-
-Creare un Context API (GlobalContext) per gestire 
-lo stato globale dell'applicazione.
-
-Definire uno useState all'interno del provider, 
-per memorizzare la lista dei task.
-
-Effettuare una richiesta GET a /tasks al caricamento dell'app, 
-utilizzando useEffect, e salvare i dati nello stato.
-
-Stampare in console i dati ricevuti per verificare 
-il corretto recupero delle informazioni.
-
-Rendere disponibile il GlobalContext.Provider in App.jsx, 
-avvolgendo l'intera applicazione.
-*/

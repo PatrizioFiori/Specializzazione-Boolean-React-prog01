@@ -1,29 +1,21 @@
-import { useContext } from "react"
-import { TaskContext, TaskProvider } from "./Context/GlobalContext"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Homepage from "./pages/HomePage"
-import TaskList from "./pages/TaskList"
-import AddTask from "./pages/AddTask"
-import Navbar from "./Components/navbar"
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./pages/HomePage";
+import TaskList from "./pages/TaskList";
+import AddTask from "./pages/AddTask";
+import DefaultLayout from "./layouts/DefaultLayouts";
+import Error404Page from "./pages/Error404Page";
 
 export default function App() {
-  const { res } = useContext(TaskContext)
-  console.log("ArrayRes", res)
-
-
   return (
-
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="/" Component={Homepage} />
-        <Route path="/TaskList" Component={TaskList} />
-        <Route path="/AddTask" Component={AddTask} />
+        <Route element={<DefaultLayout />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/TaskList" element={<TaskList />} />
+          <Route path="/AddTask" element={<AddTask />} />
+        </Route>
+        <Route path="*" element={<Error404Page />} />
       </Routes>
     </BrowserRouter>
-
-  )
+  );
 }
-

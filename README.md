@@ -13,3 +13,6 @@ Aggiungi una navbar con NavLink e imposta le rotte con Routes e Route.
 Imposta un file .env per salvare l’URL dell’API e crea un Context API globale per gestire la lista dei task.
 Usa useState e useEffect nel provider per effettuare una chiamata GET /tasks e salvare i dati nello stato.
 Avvolgi l’intera app con il GlobalContext.Provider e stampa i dati in console per verificarne la corretta ricezione.
+
+### 📌 Milestone 3 - Lista dei Task (Pagina)
+Visualizzare l'elenco dei task in una tabella. Recuperare i task dal GlobalContext e mostrarli in TaskList.jsx, utilizzando un componente TaskRow.jsx per ogni riga. Applicare stili diversi per la colonna "status" (rosso per "To do", giallo per "Doing", verde per "Done") e ottimizzare il rendering con React.memo() su TaskRow.
