@@ -7,20 +7,28 @@ const TaskRow = React.memo(() => {
 
     return (
         <>
-            {res.map(item => (
-                <tr key={item.id}>
-                    <td>{item.title}</td>
-                    <td className={
-                        item.status === "To do" ? "bg-danger" :
-                            item.status === "Doing" ? "bg-warning" :
-                                item.status === "Done" ? "bg-success" : ""
-                    }>
-                        {item.status}
-                    </td>
+            {
+                res && res.length > 0 ? (
+                    res.map(item => (
+                        <tr key={item.id}>
+                            <td>{item.title}</td>
+                            <td className={
+                                item.status === "To do" ? "bg-danger" :
+                                    item.status === "Doing" ? "bg-warning" :
+                                        item.status === "Done" ? "bg-success" : ""
+                            }>
+                                {item.status}
+                            </td>
+                            <td>{new Date(item.createdAt).toLocaleDateString()}</td>
+                        </tr>
+                    ))
+                ) : (
+                    <tr>
+                        <td colSpan="3">Nessun task attualmente disponibile</td>
+                    </tr>
+                )
+            }
 
-                    <td>{new Date(item.createdAt).toLocaleDateString()}</td>
-                </tr>
-            ))}
         </>
     );
 });
