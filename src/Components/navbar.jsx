@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">React Project</a>
+                <a className="navbar-brand" href="/">React Project</a>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -19,7 +19,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
+                            <a className="nav-link" aria-current="page" href="/">Home Page</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="/AddTask">Add Task</a>
