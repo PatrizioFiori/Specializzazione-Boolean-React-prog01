@@ -10,11 +10,11 @@ export const TaskProvider = ({ children }) => {
 
     useEffect(() => {
         getTasks()
-    }, [])
+    }, [tasks])
 
 
     return (
-        <TaskContext.Provider value={{ tasks }}>
+        <TaskContext.Provider value={{ tasks, getTasks, addTask, removeTasks, updateTask }}>
             {children}
         </TaskContext.Provider>
     )

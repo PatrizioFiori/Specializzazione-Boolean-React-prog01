@@ -1,11 +1,14 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
+import { TaskContext } from '../Context/GlobalContext';
 
 const AddTask = () => {
 
     const symbols = "!@#$%^&*()-_=+[]{}|;:'\\,.<>?/`~";
+    const { addTask } = useContext(TaskContext);
 
     function handleSubmit(e) {
         e.preventDefault()
+
         if (!title || [...title].some(char => symbols.includes(char))) {
             console.log("Il titolo non può essere lasciato vuoto e non può contenere simboli");
             return;
@@ -16,12 +19,10 @@ const AddTask = () => {
             title: title,
             description: refDescription.current.value,
             status: refStatus.current.value,
-            id: 9999,
-            createdAt: new Date().toLocaleDateString()
         }
 
         console.log(task)
-
+        addTask(task)
         resetOrTest("reset")
 
     }

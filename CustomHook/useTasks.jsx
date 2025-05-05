@@ -1,20 +1,34 @@
+import axios from 'axios';
 import { useState } from 'react'
 
 function useTasks() {
     const apiUrl = import.meta.env.VITE_API_URL;
     const [tasks, setTasks] = useState([])
 
-    async function getTasks() {
+    async function getTasks() { //fetch dei tasks
         try {
-            const data = await fetch(`${apiUrl}/tasks`);
-            const dataJson = await data.json();
-            setTasks(dataJson)
+            const response = await axios.get(`${apiUrl}/tasks`);
+            setTasks(response.data);
         } catch (err) {
-            console.log("Errore nel fetch", err)
+            console.error("Errore nel fetch:", err);
         }
     }
 
-    function addTask() { }
+    async function addTask(taskToAdd) { //funzione aggiunta di un nuovo task tramite form
+        try {
+            const response = await axios.post(`${apiUrl}/tasks`, taskToAdd);
+            const { success, message } = response.data;
+            if (!success) {
+                throw new Error(message);
+            }
+
+            await getTasks()
+            console.log("Task aggiunto")
+        } catch (err) {
+            console.error("Errore nell'aggiunta del task:", err.message);
+        }
+    }
+
     function removeTasks() { }
     function updateTask() { }
 
