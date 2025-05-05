@@ -21,3 +21,6 @@ Visualizzare l'elenco dei task in una tabella. Recuperare i task dal GlobalConte
 Creare un hook personalizzato che recupera i task con una GET da /tasks e li salva in uno stato locale.
 All'interno dell'hook definire anche le funzioni addTask, removeTask e updateTask (vuote per ora).
 Restituire tasks e le funzioni dall'hook e integrarlo nel GlobalContext per l'accesso globale.
+
+### 📌 Milestone 5 - Creazione del Form per Aggiungere un Task
+Creazione di un form per aggiungere un task, con un input per il titolo (controllato), una textarea per la descrizione (non controllata), e un select per lo stato (non controllato). Il titolo deve essere validato per evitare valori vuoti e simboli speciali. Alla pressione del bottone "Aggiungi Task", i dati devono essere stampati in console senza inviare la richiesta all'API.
