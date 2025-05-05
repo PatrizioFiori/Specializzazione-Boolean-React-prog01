@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import { TaskContext } from '../Context/GlobalContext';
 
 const TaskRow = React.memo(() => {
-    const { res } = useContext(TaskContext);
-    console.log("ArrayRes", res);
+    const { tasks } = useContext(TaskContext);
+    console.log("ArrayObj dei tasks", tasks);
 
     return (
         <>
             {
-                res && res.length > 0 ? (
-                    res.map(item => (
+                tasks && tasks.length > 0 ? (
+                    tasks.map(item => (
                         <tr key={item.id}>
                             <td>{item.title}</td>
                             <td className={

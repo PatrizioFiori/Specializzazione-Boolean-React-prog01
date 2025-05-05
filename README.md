@@ -16,3 +16,8 @@ Avvolgi l’intera app con il GlobalContext.Provider e stampa i dati in console 
 
 ### 📌 Milestone 3 - Lista dei Task (Pagina)
 Visualizzare l'elenco dei task in una tabella. Recuperare i task dal GlobalContext e mostrarli in TaskList.jsx, utilizzando un componente TaskRow.jsx per ogni riga. Applicare stili diversi per la colonna "status" (rosso per "To do", giallo per "Doing", verde per "Done") e ottimizzare il rendering con React.memo() su TaskRow.
+
+### 📌 Milestone 4 - Custom Hook useTasks()
+Creare un hook personalizzato che recupera i task con una GET da /tasks e li salva in uno stato locale.
+All'interno dell'hook definire anche le funzioni addTask, removeTask e updateTask (vuote per ora).
+Restituire tasks e le funzioni dall'hook e integrarlo nel GlobalContext per l'accesso globale.
