@@ -41,3 +41,8 @@ Aggiungere un bottone "Elimina Task" che stampa "Elimino task" in console.
 Implementa removeTask(taskId) con una chiamata DELETE /tasks/:id e gestisci success o message dalla risposta.
 Se success, aggiorna lo stato rimuovendo il task; se false, lancia errore.
 In TaskDetail.jsx, al click su "Elimina", conferma, chiama removeTask, mostra un alert e reindirizza alla lista.
+
+### 📌 Milestone 9 - Modal & Conferma Eliminazione Task
+Crea un componente Modal.jsx riutilizzabile con title, content, show, onClose, onConfirm e confirmText.
+Usa ReactDOM.createPortal per renderlo fuori dal DOM principale e mostra i bottoni "Annulla" e "Conferma".
+Integra la modale in TaskDetail.jsx per confermare l’eliminazione di un task cliccando su "Elimina Task".
