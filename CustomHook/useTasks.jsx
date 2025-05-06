@@ -38,7 +38,16 @@ function useTasks() {
         }
     }
 
-    function removeTasks() { }
+    async function removeTasks(id) {
+        try {
+            const resDelete = await axios.delete(`${apiUrl}/tasks/${id}`);
+            console.log("Task cancellato")
+        } catch (error) {
+            console.error("Errore nel delete:", err.message);
+
+        }
+    }
+
     function updateTask() { }
 
 

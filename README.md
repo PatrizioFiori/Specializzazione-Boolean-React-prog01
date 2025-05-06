@@ -36,3 +36,8 @@ Creare TaskDetail.jsx per visualizzare nome, descrizione, stato e data di creazi
 Aggiornare TaskRow.jsx per rendere il titolo del task un link a /task/:id.
 Modificare App.jsx per aggiungere la rotta /task/:id che carica TaskDetail.jsx.
 Aggiungere un bottone "Elimina Task" che stampa "Elimino task" in console.
+
+### 📌 Milestone 8 - Funzione di Eliminazione Task (DELETE)
+Implementa removeTask(taskId) con una chiamata DELETE /tasks/:id e gestisci success o message dalla risposta.
+Se success, aggiorna lo stato rimuovendo il task; se false, lancia errore.
+In TaskDetail.jsx, al click su "Elimina", conferma, chiama removeTask, mostra un alert e reindirizza alla lista.

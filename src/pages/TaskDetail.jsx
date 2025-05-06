@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { TaskContext } from "../Context/GlobalContext"
 
 
 const TaskDetail = () => {
     const { id } = useParams();
-    const { tasks, getTasks } = useContext(TaskContext);
+    const { tasks, getTasks, removeTasks } = useContext(TaskContext);
     const [taskDetail, setTaskDetail] = useState(null);
+    const navigate = useNavigate();
+
 
 
     useEffect(() => {
@@ -36,7 +38,12 @@ const TaskDetail = () => {
                                 </span>
                             </p>
                             <p className="card-text mb-2"><strong>Created At:</strong> {new Date(taskDetail.createdAt).toLocaleDateString()}</p>
-                            <button className="btn btn-danger mt-3">Elimina</button>
+                            <button onClick={() => {
+                                if (confirm("Sicuro di voler eliminare il task ?")) {
+                                    removeTasks(taskDetail.id)
+                                    navigate("/TaskList ")
+                                }
+                            }} className="btn btn-danger mt-3">Elimina</button>
                         </div>
                     </div>
                 ) : (
