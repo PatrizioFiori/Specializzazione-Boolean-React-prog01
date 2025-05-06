@@ -11,7 +11,7 @@ const TaskRow = React.memo(() => {
                 tasks && tasks.length > 0 ? (
                     tasks.map(item => (
                         <tr key={item.id}>
-                            <td>{item.title}</td>
+                            <td><a className='text-dark' href={`/TaskDetail/${item.id}`} >{item.title}</a></td>
                             <td className={
                                 item.status === "To do" ? "bg-danger" :
                                     item.status === "Doing" ? "bg-warning" :

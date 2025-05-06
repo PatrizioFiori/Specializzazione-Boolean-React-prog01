@@ -4,6 +4,7 @@ import TaskList from "./pages/TaskList";
 import AddTask from "./pages/AddTask";
 import DefaultLayout from "./layouts/DefaultLayouts";
 import Error404Page from "./pages/Error404Page";
+import TaskDetail from "./pages/TaskDetail";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/TaskList" element={<TaskList />} />
           <Route path="/AddTask" element={<AddTask />} />
+          <Route path="/TaskDetail/:id" element={<TaskDetail />} />
         </Route>
         <Route path="*" element={<Error404Page />} />
       </Routes>

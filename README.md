@@ -30,3 +30,9 @@ Completare la funzione addTask per inviare una POST a /tasks con title, descript
 Gestire la risposta controllando success: se true, aggiornare lo stato; se false, lanciare un errore con message.
 Nel form AddTask, richiamare addTask al submit con i dati del form.
 Mostrare un alert in caso di successo o errore e resettare il form se la creazione va a buon fine.
+
+### 📌 Milestone 7 - Pagina Dettaglio Task
+Creare TaskDetail.jsx per visualizzare nome, descrizione, stato e data di creazione di un task.
+Aggiornare TaskRow.jsx per rendere il titolo del task un link a /task/:id.
+Modificare App.jsx per aggiungere la rotta /task/:id che carica TaskDetail.jsx.
+Aggiungere un bottone "Elimina Task" che stampa "Elimino task" in console.
