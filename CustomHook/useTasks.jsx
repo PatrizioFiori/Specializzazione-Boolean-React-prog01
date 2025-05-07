@@ -42,13 +42,33 @@ function useTasks() {
         try {
             const resDelete = await axios.delete(`${apiUrl}/tasks/${id}`);
             console.log("Task cancellato")
+            if (!success) {
+                throw new Error(message);
+            }
         } catch (error) {
             console.error("Errore nel delete:", err.message);
 
         }
     }
 
-    function updateTask() { }
+    async function updateTask(taskToMod) {
+        //taskToMod sarà un obj derivante da un form con al suo interno le modifiche e 
+        // le info importanti come l'id
+        try {
+            const resPut = await axios.put(`${apiUrl}/tasks/${taskToMod.id}`, taskToMod);
+            const { success, message } = resPut.data;
+
+            if (!success) {
+                throw new Error(message);
+            }
+            console.log("Task modificato")
+            await getTasks()
+
+        } catch (error) {
+            console.error("Errore nella modifica del task:", error.message);
+
+        }
+    }
 
 
     return { tasks, infoSingoloTask, getTasks, addTask, removeTasks, updateTask }

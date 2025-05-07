@@ -61,7 +61,7 @@ const AddTask = () => {
                             ref={refDescription}
                         />
 
-                        <select className="form-select mb-3" ref={refStatus} defaultValue="">
+                        <select className="form-select mb-3" defaultValue="">
                             <option value="" disabled>Seleziona lo stato</option>
                             <option className="bg-danger" value="To do">To do</option>
                             <option className="bg-warning" value="Doing">Doing</option>
