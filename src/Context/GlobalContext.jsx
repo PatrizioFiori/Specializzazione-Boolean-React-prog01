@@ -5,7 +5,7 @@ export const TaskContext = createContext()
 
 export const TaskProvider = ({ children }) => {
 
-    const { tasks, infoSingoloTask, getTasks, addTask, removeTasks, updateTask } = useTasks()
+    const { tasks, setTasks, infoSingoloTask, getTasks, addTask, removeTasks, updateTask } = useTasks()
 
 
     useEffect(() => {
@@ -14,7 +14,7 @@ export const TaskProvider = ({ children }) => {
 
 
     return (
-        <TaskContext.Provider value={{ tasks, infoSingoloTask, getTasks, addTask, removeTasks, updateTask }}>
+        <TaskContext.Provider value={{ tasks, setTasks, infoSingoloTask, getTasks, addTask, removeTasks, updateTask }}>
             {children}
         </TaskContext.Provider>
     )

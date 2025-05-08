@@ -71,7 +71,7 @@ function useTasks() {
     }
 
 
-    return { tasks, infoSingoloTask, getTasks, addTask, removeTasks, updateTask }
+    return { tasks, setTasks, infoSingoloTask, getTasks, addTask, removeTasks, updateTask }
 }
 
 export default useTasks
