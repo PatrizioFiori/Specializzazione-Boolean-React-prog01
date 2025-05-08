@@ -10,7 +10,7 @@ const EditTaskModal = ({ show, onClose, task, onSave }) => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [status, setStatus] = useState("")
-    const formRef = useRef(); // 💡 REF al form
+    const formRef = useRef();
 
     useEffect(() => {
         if (task) {
@@ -25,9 +25,9 @@ const EditTaskModal = ({ show, onClose, task, onSave }) => {
 
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // evita il refresh
+        e.preventDefault();
         const updatedTask = { ...task, title, description, status };
-        onSave(updatedTask); // manda i dati aggiornati
+        onSave(updatedTask);
     };
 
 

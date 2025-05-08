@@ -46,3 +46,13 @@ In TaskDetail.jsx, al click su "Elimina", conferma, chiama removeTask, mostra un
 Crea un componente Modal.jsx riutilizzabile con title, content, show, onClose, onConfirm e confirmText.
 Usa ReactDOM.createPortal per renderlo fuori dal DOM principale e mostra i bottoni "Annulla" e "Conferma".
 Integra la modale in TaskDetail.jsx per confermare l’eliminazione di un task cliccando su "Elimina Task".
+
+
+### 📌 Milestone 10 - Modale e Funzione di Modifica Task (PUT)
+Creare una modale EditTaskModal che permetta di modificare un task e salvarlo via API.
+All'interno della modale, usare un form controllato con useState per i campi title, description e status.
+Utilizzare useRef() per ottenere il riferimento al form e simulare il submit con formRef.current.requestSubmit() quando si clicca "Salva".
+Nel submit, chiamare onSave() passando il task aggiornato.
+Nel contesto useTasks(), implementare updateTask(updatedTask) con chiamata PUT /tasks/:id.
+Se success è true, aggiornare lo stato globale; se false, lanciare un errore con il messaggio.
+Integrare la modale in TaskDetail.jsx, aprirla con un bottone e gestire conferma o errore con alert.
