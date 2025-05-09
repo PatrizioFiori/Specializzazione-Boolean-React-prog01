@@ -47,7 +47,6 @@ Crea un componente Modal.jsx riutilizzabile con title, content, show, onClose, o
 Usa ReactDOM.createPortal per renderlo fuori dal DOM principale e mostra i bottoni "Annulla" e "Conferma".
 Integra la modale in TaskDetail.jsx per confermare l’eliminazione di un task cliccando su "Elimina Task".
 
-
 ### 📌 Milestone 10 - Modale e Funzione di Modifica Task (PUT)
 Creare una modale EditTaskModal che permetta di modificare un task e salvarlo via API.
 All'interno della modale, usare un form controllato con useState per i campi title, description e status.
@@ -56,3 +55,9 @@ Nel submit, chiamare onSave() passando il task aggiornato.
 Nel contesto useTasks(), implementare updateTask(updatedTask) con chiamata PUT /tasks/:id.
 Se success è true, aggiornare lo stato globale; se false, lanciare un errore con il messaggio.
 Integrare la modale in TaskDetail.jsx, aprirla con un bottone e gestire conferma o errore con alert.
+
+### 📌 Milestone 11 - Ordinamento delle Task
+Implementa un ordinamento dinamico nella tabella usando due state (sortBy, sortOrder) e useMemo per ricalcolare solo quando necessario.
+Rendi cliccabili le intestazioni per cambiare criterio o invertire l’ordine.
+Ordina per title (alfabetico), status (To do < Doing < Done), o createdAt (con .getTime()).
+Applica sortOrder per gestire l’ordine crescente o decrescente.
