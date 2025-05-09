@@ -61,3 +61,7 @@ Implementa un ordinamento dinamico nella tabella usando due state (sortBy, sortO
 Rendi cliccabili le intestazioni per cambiare criterio o invertire l’ordine.
 Ordina per title (alfabetico), status (To do < Doing < Done), o createdAt (con .getTime()).
 Applica sortOrder per gestire l’ordine crescente o decrescente.
+
+
+### 📌 Milestone 12 - Ricerca dei Task con Debounce
+Aggiungere un campo di ricerca che consente di filtrare i task in base al nome, ottimizzando le prestazioni con debounce. Creare un input di ricerca controllato e uno stato searchQuery per memorizzare il valore dell'input. Modificare la logica di ordinamento in useMemo() per filtrare e ordinare i task in base a searchQuery. Implementare il debounce con setTimeout() e utilizzare useCallback() per ottimizzare la funzione e prevenire ricalcoli inutili.

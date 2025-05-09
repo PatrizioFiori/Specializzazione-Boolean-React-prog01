@@ -35,11 +35,9 @@ const AddTask = () => {
         refStatus.current.value = isTest ? "To do" : "";
     }
 
-
-    const refDescription = useRef("")
-    const refStatus = useRef("")
+    const refDescription = useRef(null);
+    const refStatus = useRef(null);
     const [title, setTitle] = useState("")
-
 
     return (
         <>
@@ -61,7 +59,7 @@ const AddTask = () => {
                             ref={refDescription}
                         />
 
-                        <select className="form-select mb-3" defaultValue="">
+                        <select className="form-select mb-3" ref={refStatus}>
                             <option value="" disabled>Seleziona lo stato</option>
                             <option className="bg-danger" value="To do">To do</option>
                             <option className="bg-warning" value="Doing">Doing</option>
@@ -76,10 +74,8 @@ const AddTask = () => {
                     </form>
                 </div>
             </div>
-
         </>
-
     )
 }
 
-export default AddTask
+export default AddTask;

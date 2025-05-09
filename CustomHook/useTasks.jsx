@@ -41,15 +41,16 @@ function useTasks() {
     async function removeTasks(id) {
         try {
             const resDelete = await axios.delete(`${apiUrl}/tasks/${id}`);
-            console.log("Task cancellato")
-            if (!success) {
-                throw new Error(message);
+            if (resDelete.data.success) {
+                console.log("Task cancellato");
+            } else {
+                throw new Error("La cancellazione del task è fallita");
             }
         } catch (error) {
-            console.error("Errore nel delete:", err.message);
-
+            console.error("Errore nel delete:", error.message);
         }
     }
+
 
     async function updateTask(taskToMod) {
         //taskToMod sarà un obj derivante da un form con al suo interno le modifiche e 
